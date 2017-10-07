@@ -36,7 +36,7 @@ namespace DodgeGame
                             break;
                     case ConsoleKey.DownArrow:
                     case ConsoleKey.S:
-                        if (Y < Console.WindowHeight - 1)
+                        if (Y < Console.WindowHeight - 2)
                         {
                             Y += 1;
                         }

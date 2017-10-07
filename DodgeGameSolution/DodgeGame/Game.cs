@@ -88,7 +88,11 @@ namespace DodgeGame
 
                 //Draw the score!
                 Console.SetCursorPosition(0, Console.WindowHeight - 1);
+                Console.BackgroundColor = ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write(Game.Score);
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
 
                 //Let's just do a TINY sleep as to avoid running at a million FPS.
                 Thread.Sleep( 5 );
@@ -103,7 +107,10 @@ namespace DodgeGame
             Console.WriteLine("Game Over!");
             Console.WriteLine();
             Console.WriteLine("Your final score is " + Game.Score + "!");
-            Console.SetCursorPosition(0, Console.WindowHeight - 1);
+            Console.SetCursorPosition(0, Console.WindowHeight - 3);
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
 
     }
