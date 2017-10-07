@@ -2,9 +2,8 @@
 
 namespace DodgeGame
 {
-    public class Unit
+    abstract public class Unit
     {
-
         public Unit(int x, int y, string UnitGraphic)
         {
             this.UnitGraphic = UnitGraphic;
@@ -27,6 +26,8 @@ namespace DodgeGame
                     throw new Exception("Invalid X coordinates received.");
                 }
 
+                //We are moving, so Undraw!
+                Undraw();
                 _x = value;
             }
         }
@@ -49,6 +50,8 @@ namespace DodgeGame
                     throw new Exception("Invalid Y coordinates received.");
                 }
 
+                //Again, moving so Undraw!
+                Undraw();
                 _y = value;
             }
         }
@@ -59,10 +62,23 @@ namespace DodgeGame
 
         public string UnitGraphic;
 
+        virtual public void Update( int deltaTimeMS )
+        {
+            //This is an instance method that gets run
+            //every frame, where the Unit should resolve
+            //any gamey things that are going on.
+            //The idea is that all Units Update themselves,
+            //then all Units will be Drawn.
 
+            //Since this Update runs for both Player AND Enemy Units,
+            //it needs to be overridden by child classes.
+            
+            //throw new Exception("We are in Unit::Update()");
+
+        }
 
         //This draws the unit on the screen.
-        public void Draw()
+        virtual public void Draw()
         {
             //This is an instance method, so if we refer
             //to fields like x and y, we will be using
@@ -71,6 +87,27 @@ namespace DodgeGame
             Console.SetCursorPosition(this.X, this.Y);
             Console.Write(this.UnitGraphic);
 
+        }
+
+        //Undraws old character from screen.
+        public void Undraw()
+        {
+            Console.SetCursorPosition(this.X, this.Y);
+            Console.Write(' ');
+        }
+
+        public bool IsCollidingWith(Unit other)
+        {
+            //"this" is the current unit.
+            //"other" is the other unit.
+
+            if (this.X == other.X && this.Y == other.Y)
+            {
+                //We are in same square. Are colliding.
+                return true;
+            }
+
+            return false;
         }
 
     }

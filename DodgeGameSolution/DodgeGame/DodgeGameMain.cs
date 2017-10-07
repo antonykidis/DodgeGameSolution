@@ -6,25 +6,18 @@ namespace DodgeGame
     {
         static void Main()
         {
+            //Let's hide the blinking cursor. We won't need it.
+            Console.CursorVisible = false;
+
+            //Create a new game.
+            Game game = new Game();
+
+            //Run the game.
+            game.Run();
+
+            //When we get here, the game is over.
 
 
-            //Instantiate a Unit that will represent the player.
-            //Unit constructor's signature: X pos, Y pos, Char.
-            Unit playerUnit = new Unit(10, 5, "@");
-
-            //Instantiate a Unit that will represent the enemy.
-            //Unit constructor's signature: X pos, Y pos, Char.
-            Unit enemyUnit = new Unit(20, 17, "X");
-
-            //Test dummy Unit.
-            //Unit testUnit = new Unit(1, 2, "3");
-
-            //Draw Units.
-            playerUnit.Draw();
-            enemyUnit.Draw();
-            //testUnit.Draw();
-            
-            
             //After program ends, set "Press any key to continue..." to bottom.
 
             Console.SetCursorPosition(0, Console.WindowHeight - 1);
