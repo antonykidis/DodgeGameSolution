@@ -1,0 +1,7 @@
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\bin\Debug\DodgeGame.exe.config
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\bin\Debug\DodgeGame.exe
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\bin\Debug\DodgeGame.pdb
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\obj\Debug\DodgeGame.csprojResolveAssemblyReference.cache
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\obj\Debug\DodgeGame.csproj.CoreCompileInputs.cache
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\obj\Debug\DodgeGame.exe
+C:\Users\Diego\source\repos\DodgeGameSolution\DodgeGame\obj\Debug\DodgeGame.pdb
