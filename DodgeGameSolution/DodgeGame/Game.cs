@@ -88,11 +88,7 @@ namespace DodgeGame
 
                 //Draw the score!
                 Console.SetCursorPosition(0, Console.WindowHeight - 1);
-                Console.BackgroundColor = ConsoleColor.DarkRed;
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(Game.Score);
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Score: " + Game.Score);
 
                 //Let's just do a TINY sleep as to avoid running at a million FPS.
                 Thread.Sleep( 5 );
