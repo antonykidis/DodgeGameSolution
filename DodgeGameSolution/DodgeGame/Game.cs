@@ -42,7 +42,7 @@ namespace DodgeGame
 
         private Unit playerUnit;
 
-        private int numEnemies = 20;
+        private int numEnemies = 15;
         private Unit[] enemyUnits;
 
         public void Run()
@@ -105,8 +105,11 @@ namespace DodgeGame
             Console.WriteLine("Your final score is " + Game.Score + "!");
             Console.SetCursorPosition(0, Console.WindowHeight - 3);
             Console.WriteLine();
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            Console.WriteLine("Press enter to exit...");
+            ConsoleKeyInfo enter = Console.ReadKey();
+            while (enter.Key != ConsoleKey.Enter)
+            enter = Console.ReadKey();
+
         }
 
     }

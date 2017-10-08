@@ -12,9 +12,11 @@ namespace DodgeGame
         {
             //Be dormant for up to a second.
             sleepForMS = Game.Random.Next(0, 2000);
+
+            TimeBetweenMoves = Game.Random.Next(40, 60);
         }
 
-        public int TimeBetweenMoves = 20; //in Milliseconds.
+        public int TimeBetweenMoves; //in Milliseconds.
         private int timeSinceLastMove = 0;
 
         private int sleepForMS = 0;
@@ -61,6 +63,15 @@ namespace DodgeGame
                 Y = Game.Random.Next(0, Console.WindowHeight - 1);
                 //And sleep a little bit.
                 sleepForMS = Game.Random.Next(0, 1000);
+                //Every time enemy spawns, get a little bit faster.
+                //by reducing TimeBetweenMoves.
+                TimeBetweenMoves = TimeBetweenMoves * 95 / 100;
+                if (TimeBetweenMoves < 10)
+                {
+                    //Keep Time to something sane.
+                    TimeBetweenMoves = 10;
+                }
+
                 //Give the player a point.
                 Game.Score += 1;
             }
